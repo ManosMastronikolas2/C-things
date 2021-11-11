@@ -15,22 +15,21 @@ int main(){
     
     std::cin.ignore();
 
-    int* psifoi = new int[k];
-    ypopsifios* ypopsifioi = new ypopsifios[m];
+    int* psifoi = new int[k]; //array me k elements pu krataei tous ari8mous sta pshfodeltia
+    ypopsifios* ypopsifioi = new ypopsifios[m];//array class objects pu exei m elements
 
 
     for(int i=0;i<k;i++){
-        std::cin >> psifoi[i];
+        std::cin >> psifoi[i];//vazoume tous ari8mous twn pshfodeltiwn sto array
     }
 
-    for(int i=0;i<k-1;i++){
-        for(int j=0;j<m-1;j++){
-            ypopsifioi[j].num = psifoi[i];
-            ypopsifioi[j].cnt += 1;
-        }
+    for(int i=0;i<k-1;i++){ //analoga me to num sto pshfodeltio auxanoume to count twn pshfwn sto antistoixo element
+      ypopsifioi[j].num = psifoi[i];
+      ypopsifioi[j].cnt += 1;
+      
     }
 
-    for(int i=1;i<=m;i++){
+    for(int i=1;i<=m;i++){ //vriskume to element me to megalutero count
 
         if(ypopsifioi[0].cnt < ypopsifioi[i].cnt){
             ypopsifioi[0] = ypopsifioi[i];
@@ -40,7 +39,7 @@ int main(){
 
     std::cout << ypopsifioi[0].num << '\n';
 
-    delete[] psifoi;
+    delete[] psifoi;//diagrafoume ta arrays
     delete[] ypopsifioi;
     return 0;
 }
